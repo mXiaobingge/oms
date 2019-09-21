@@ -1,0 +1,28 @@
+    {% csrf_token %}
+    <div class='row' style='margin-top:0.5vh;'>
+        <div class='little-title'>温度及大气压</div>       
+        <div class='con_first'>
+            <div>
+                室温度:<span>--</span>℃
+            </div>    
+            <div>
+                大气压:<span>--</span>kPa
+            </div>
+        </div>
+        <div class='little-title'>实时光字牌</div>       
+        <div class='con_second'>
+            <div class='con_plate'>装置温度高</div>
+            <div class='con_plate'>板间通信异常</div>
+            <div class='con_plate'>串口通信异常</div>
+            <div class='con_plate'>电源异常</div>
+            <div class='con_plate'>GPS对时异常</div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='little-title'>数据趋势图</div>
+    </div> 
+    <div style='width: 100%'>
+        <div class='con_third'>   
+            <div id='con_echarts' style='height:95%;width: 95%;'><br>正在加载中...</div>
+        </div>
+    </div>

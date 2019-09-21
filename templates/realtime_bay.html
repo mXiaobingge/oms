@@ -1,0 +1,85 @@
+    {% csrf_token %}
+    <div class='row' style='margin-top:0.5vh;'>
+        <div class='little-title'>实时光字牌</div>
+        <div class='little-title' id = "board-confirm">本图确认</div>
+    </div>
+    <div class='board'>
+        <div class='board-row'>
+            <div class='board-column'  id='A_connect'>A相通信异常</div>
+            <div class='board-column' id='B_connect'>B相通信异常</div>
+            <div class='board-column' id='C_connect'>C相通信异常</div>
+            <div class='board-column' id='N_connect'>中性点通信异常</div>
+        </div>
+        <div class='board-row'>
+            <div class='board-column'  id='A_data'>A相数据异常</div>
+            <div class='board-column' id='B_data'>B相数据异常</div>
+            <div class='board-column' id='C_data'>C相数据异常</div>
+            <div class='board-column' id='N_data'>中性点数据异常</div>
+        </div>
+        <div class='board-row'>
+            <div class='board-column warnings1'id='A_S300'>A相缓慢电热故障</div>
+            <div class='board-column warnings1'id='B_S300'>B相缓慢电热故障</div>
+            <div class='board-column warnings1'id='C_S300'>C相缓慢电热故障</div>
+            <div class='board-column warnings1'id='N_S300' style='font-size:2vh;'>中性点缓慢电热故障</div>
+        </div>
+        <div class='board-row'>
+            <div class='board-column warnings1'id='A_S100'>A相瞬时电热故障</div>
+            <div class='board-column warnings1'id='B_S100'>B相瞬时电热故障</div>
+            <div class='board-column warnings1'id='C_S100'>C相瞬时电热故障</div>
+            <div class='board-column warnings1'id='N_S100' style='font-size:2vh;'>中性点瞬时电热故障</div>
+        </div>
+        <div class='board-row'>
+            <div class='board-column warnings1' id='A_S200' style='font-size:2vh;'>A相瞬时严重电热故障</div>
+            <div class='board-column warnings1' id='B_S200' style='font-size:2vh;'>B相瞬时严重电热故障</div>
+            <div class='board-column warnings1' id='C_S200' style='font-size:2vh;'>C相瞬时严重电热故障</div>
+            <div class='board-column warnings1' id='N_S200' style='font-size:1.67vh;'>中性点瞬时严重电热故障</div>
+        </div>
+        <div class='board-row'>
+            <div class='board-column warnings1' id='A_S400'>A相缓慢泄漏故障</div>
+            <div class='board-column warnings1' id='B_S400'>B相缓慢泄漏故障</div>
+            <div class='board-column warnings1' id='C_S400'>C相缓慢泄漏故障</div>
+            <div class='board-column warnings1' id='N_S400' style='font-size:2vh;'>中性点缓慢泄漏故障</div>
+        </div>
+        <div class='board-row'>
+            <div class='board-column warnings1' id='A_S500'>A相绝压一般告警</div>
+            <div class='board-column warnings1' id='B_S500'>B相绝压一般告警</div>
+            <div class='board-column warnings1' id='C_S500'>C相绝压一般告警</div>
+            <div class='board-column warnings1' id='N_S500' style='font-size:2vh;'>中性点绝压一般告警</div>
+        </div>
+        <div class='board-row'>
+            <div class='board-column warnings1' id='A_S600'>A相绝压严重告警</div>
+            <div class='board-column warnings1' id='B_S600'>B相绝压严重告警</div>
+            <div class='board-column warnings1' id='C_S600'>C相绝压严重告警</div>
+            <div class='board-column warnings1' id='N_S600' style='font-size:2vh;'>中性点绝压严重告警</div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='little-title'>数据趋势图</div>     
+        <!-- <div class='date-div'>
+            <span>采样间隔:</span>
+            <select id='interval-choise'>
+                <option value ="10s">10秒</option>
+                <option value ="1m">1分钟</option>
+                <option value="5m">5分钟</option>
+                <option value ="10m">10分钟</option>
+                <option value="30m">30分钟</option>
+                <option value="1h">1小时</option>
+            </select>
+        </div>    -->
+    </div> 
+    <div style='width: 100%'>
+            <div class='left-footer'>   
+                    <div id='echarts' style='height:100%;'><br>正在加载中...</div>
+                </div>
+                <div class='right-footer'>
+                        <div><p>pa&nbsp;&nbsp; <span></span><font>kPa</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b></p></div>
+                        <div><p>pb&nbsp;&nbsp; <span></span><font>kPa</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b></p></div>
+                        <div><p>pc&nbsp;&nbsp; <span></span><font>kPa</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b></p></div>
+                        <div><p>pn&nbsp;&nbsp; <span></span><font>kPa</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b></p></div>
+                        <div><p>pab <span></span><font>kPa</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b></p></div>
+                        <div><p>pbc <span></span><font>kPa</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b></p></div>
+                        <div><p>pac <span></span><font>kPa</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b></p></div>
+                        <div><p>室温度 <span></span><font>℃</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b></p></div>
+                        <div><p>大气压 <span></span><font>kPa</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b></b></p></div>
+                </div>
+    </div>

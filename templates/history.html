@@ -1,0 +1,130 @@
+{% extends 'tree.html' %}
+
+{% block css %}
+<!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css"> -->
+<style>
+    p{
+        margin:0;
+    }
+    .but_list{
+        margin: 1.1vh 0;
+        height: 4vh;
+        width:31.6vw;
+        border:1px solid #e7e7e7;
+        background: #f8f8f8;
+    }
+    .little-title{
+        padding-top: 1vh;
+        padding-bottom: 0.8vh;
+        float: left;
+        width:7.8vw;
+        height: 3.71vh;
+        font-size:1.78vh;
+        color:#555;    
+        align-items: center;
+        text-align: center;
+        cursor:pointer;
+        line-height: 1;
+    }
+    .little-title:active{
+        background: #e7e7e7;
+        color:#777;
+    }
+    select option{
+        position: relative;
+        left: 2.5vw;
+        padding-top:2px;
+        padding-bottom:0.6vh;
+    }
+    #divtable{
+      width: 100%;
+      margin-top:0.6vh;
+      margin-bottom:5.5vh;
+    }
+    #divtable td,th {
+        font-size: 1.33vh;
+        padding:0.6vh;
+    }
+    #divtable tr:nth-child(even){
+        background: rgb(231, 235, 236);
+    }
+    #divtable tr:hover{
+        background: rgb(204, 208, 209);
+        cursor:unset;
+    }
+    #echarts{
+        width: 100%;
+        height: 80%;
+        border: 1px solid black;
+        margin-bottom:5.5vh;
+    }
+
+    #date-choise3,#interval-choise{
+        width:8.3vw;
+        height: 3.3vh;
+        font-size:1.78vh;
+    }
+    .date-div{
+        float: left;
+        margin:0 1.25vw;
+    }
+    .date-div input {
+        height: 3.3vh;
+    }
+    #body-content{
+        margin-top: 5vh;
+    }
+    .body-echart{
+        height: 77.7vh;
+    }
+</style>
+{% endblock css %}
+
+{% block info %}
+<div  class="right-body" >
+    <div class="but_list" >        
+        <div class='little-title' id='table-but' >数据表格</div>
+        <div class='little-title' id="change-but" style="background: rgb(231, 231, 231);">数据趋势图</div>
+        <div class='little-title' id="contrast-but">相内对比图</div>
+        <div class='little-title' id="statistics-but">统计图</div>
+    </div>
+    <div style="height:1vh;"></div>
+    <div class="date-div">
+        <!-- <div class='little-title'>相内对比图</div> -->
+        <span>时间选择:</span>
+        <select id='date-choise3'>
+            <option value ="day">最近一天</option>
+            <option value ="week">最近一周</option>
+            <option value="month">最近一月</option>
+        </select>
+        <span>采样间隔:</span>
+        <select id='interval-choise'>
+            <option value ="10s">10秒</option>
+            <option value ="1m">1分钟</option>
+            <option value="5m">5分钟</option>
+            <option value ="10m">10分钟</option>
+            <option value="30m">30分钟</option>
+            <option value="1h" selected>1小时</option>
+        </select>
+    </div> 
+    <div class="date-div">
+        <span>时间段选择: </span>
+            <input type="text" class='date-choise'  id='date-choise1'>
+            <input type="text" class='date-choise' id='date-choise2'>
+        <button> 确定 </button>
+    </div>
+    <!-- <button id='TableToExcel'> 表格导出 </button> -->
+    <div id="body-content">
+        <div id="divtable">正在加载中...<table id="histable"> </table></div>
+    </div>
+</div>
+
+{% endblock info %}
+
+{% block js %}   
+
+<script src="/static/laydate/laydate.js"></script>
+<script src="/static/project-define/js/history.js"></script>
+<script>
+</script>
+{% endblock js %}

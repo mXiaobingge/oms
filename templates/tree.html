@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block css %}
+{% endblock css %}
+<style>
+    .sidebar li {
+        border:0px;
+    }
+    
+    .list-group-item,.node-treeview{
+        padding:5px;
+    }
+    .list-group li{
+        padding:5px;
+    }
+</style>
+
+{% block main %}
+<div class="row">
+    <div class="sidebar" style="position:fixed;top:77px;left:0px;width:20.8vw;background-color:#ffffff">        
+        <div class="sidebar-scroll" >
+            <div id="treeview" style="line-height:1.11vh;"></div>
+        </div>
+    </div>
+          
+    <div style="margin-left:23.3vw;width:calc(100% - 23.3vw);position: absolute;">
+        {% block info %}{% endblock info %}
+    </div> 
+    <input type="hidden" id="hidden_tag">
+</div>
+{% endblock main %}
+
+{% block js %}
+
+
+{% endblock js %}
+

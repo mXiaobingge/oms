@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dist/flatpickr.min.css">
+    <script src="./dist/flatpickr.min.js"></script>
+    <script src="./src/flatpickr.l10n.zh.js"></script>
+</head>
+<body>
+    <input id="flatpickr-tryme" placeholder="......">
+</body>
+<script>
+    document.getElementById("flatpickr-tryme").flatpickr({
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    defaultDate: "2016-10-20 15:30",
+    enableSeconds:true,
+    time_24hr:true,
+    onClose:function(dateObject, dateString){
+        console.log(dateString)
+        console.log(dateObject)
+    }
+});
+</script>
+</html>

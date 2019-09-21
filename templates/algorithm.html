@@ -1,0 +1,81 @@
+{% extends 'tree.html' %}
+
+{% block css %}
+<style>
+    p{
+        margin:0;
+    }
+    .right-body{
+        margin-top:2vh;    
+        margin-bottom:11vh;
+    }
+    .column{
+        float: left;
+        margin: 1vh 1vw;
+        width: 22vw;
+    }
+    .column b{
+        width:7vw;
+        font-weight: 600;
+        display: block;
+    }
+    .body-foot {
+        float: left;
+        margin-top:1vh;
+        height: 6vh;
+    }
+    .body-foot button{
+        margin:2vh 1vw;
+        width:6vw;
+        height: 3vh;
+        font-size:1.5vh;
+    }
+    button{
+        margin:0 1vw;
+        width:8vw;
+        height: 4vh;
+    }
+    .algs_table{
+        overflow: auto;
+    }
+    #algs_table{
+        margin-bottom:1vh;
+    }
+    #algs_table td {
+        font-size: 1.33vh;
+        padding:0.5vh;
+        white-space: nowrap;  
+        border:1px solid black;
+        text-align: center;
+    }
+
+    .right-body .little-title{
+        float:left;
+        width: 10vw;
+        height: 4vh;
+        color:white;
+        font-size:2vh;
+        margin:1vh;
+        background: black;
+        text-align: center;
+        line-height:4vh;
+        border:1px solid #5B9BD5;
+        z-index:100;
+        cursor:pointer;
+    }
+    .algs_input{
+        visibility: hidden;
+    }
+</style>
+{% endblock css %}
+{% block info %}
+
+<input type="hidden" id="tags">
+<input type="hidden" id="subip">
+<input type="hidden" id="classes">
+<div class="right-body">
+</div>
+{% endblock info %}
+{% block js %}
+<script src="/static/project-define/js/algorithm.js"></script>
+{% endblock js %}

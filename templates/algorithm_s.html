@@ -1,0 +1,19 @@
+    <div style="height:8vh;">
+        <div class="little-title" onclick='but("T")'>主变间隔</div>
+        <div class="little-title" onclick='but("L")'>线路间隔</div>
+        <div class="little-title" onclick='but("N")'>其他间隔</div>
+    </div>
+    <div class='algs_table'>
+        <table id = "algs_table" ></table>
+    </div>
+    <div>
+        <button onclick=change_visable()>批量修改</button>
+        <button onclick=algs_enable(0)>批量停止</button>
+        <button onclick=algs_enable(1)>批量启动</button>
+    </div>
+    <div class= "algs_input" >
+        <div id="algs_input"></div>        
+        <div>
+            <button onclick=algs_save()>保存</button>
+        </div>
+    </div>

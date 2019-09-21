@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block css %}
+<style>
+    .top{
+        height:13.3vh;
+        width:100%;
+    }
+    .top-left{
+        margin:0 auto;
+        background: gray;
+        clear: both;
+        padding-left:10vw;
+
+    }
+    .top-left .count-data{
+        float: left;
+        width: 11.5%;
+        height:13.3vh;
+    }
+    .count-data .round{
+        float: left;
+        margin: 10 30%;
+        width: 14vh;
+        height: 14vh;
+
+        padding: 0.55vh;
+        border: 0.3vh solid red;
+        border-radius: 100%;
+    }
+    .count-data .half-round{
+        position: absolute;
+        width: 12.5vh;
+        height: 12.5vh;
+        border-top:0.5vh solid rgb(9, 150, 206);
+        border-radius: 100%;
+    }
+    .count-data .half-round:hover{
+        transform:rotate(108000deg);
+        transition:transform 600s linear;
+    }
+    
+    .count-data p{
+        float: left;
+        padding: 5;
+        width: 12.5vh;
+        height: 12.5vh;
+        text-align: center;
+        padding-top: 4vh;
+    }
+    .count-data b{
+        color:red;
+        font-size: 2vh;
+    }
+    #echart_map{
+        height:60vh;
+        width: 90%;
+        margin: 0 auto;
+    }
+    #map_return{
+        position:fixed;
+        right:10.8vw;
+        top: 27.8vh;
+        z-index: 100;
+        border:2px black solid;
+        cursor: pointer;
+    }
+</style>
+
+{% endblock css %}
+
+{% block main %}
+<div class='top' >
+    <div class="top-left">
+        <div class="count-data">
+            <div class="round"><div class="half-round"></div> <p><b><span></span>座</b><br>变电站</p></div>
+        </div>
+        <div class="count-data">            
+            <div class="round"><div class="half-round"></div> <p><b><span></span>个</b><br>间隔</p></div>
+        </div>
+        <div class="count-data">            
+            <div class="round"><div class="half-round"></div> <p><b><span></span>支</b><br>物联网终端</p></div>
+        </div>
+        <div class="count-data">            
+            <div class="round"><div class="half-round"></div> <p><b><span></span>万h</b><br>安全护航</p></div>
+        </div>
+        <div class="count-data">            
+            <div class="round"><div class="half-round"></div> <p><b><span></span>万条</b><br>存储数据</p></div>
+        </div>
+        <div class="count-data">            
+            <div class="round"><div class="half-round"></div> <p><b><span></span>起</b><br>成功预警</p></div>
+        </div>
+        <!-- <div class="count-data">            
+            <div class="round"><div class="half-round"></div> <p><b><span></span>亿</b><br>避免经济损失</p></div>
+        </div>         -->
+    </div>
+</div>
+<img id="map_return" src="/static/project-define/img/china.png" alt="">
+<div class= 'map' id="echart_map">
+    
+</div>
+<input type="hidden" name="" id="choise_pro">
+{% endblock main %}
+
+{% block js %}
+<script src="/static/jquery/jquery-3.4.1.min.js"></script>
+<script src="/static/project-define/js/main.js"></script> 
+{% endblock js %}

@@ -1,0 +1,53 @@
+{% extends 'tree.html' %}
+
+{% block css %}
+<style>
+    p{
+        margin:0;
+    }
+    p{
+        margin:0;
+    }
+    #body-title{
+        width: 100%;
+        background:#eee;
+        height: 2vh;
+    }
+    #divtable{
+      width: 100%;
+      height:95%;
+      margin-top:0.5vh;
+    }    
+    #divtable td,th {
+        font-size: 1.33vh;
+        padding:0.6vh;
+    }
+    #divtable tr:nth-child(even){
+        background: rgb(231, 235, 236);
+    }
+    #divtable tr:hover{
+        background: rgb(204, 208, 209);
+        cursor:unset;
+    }
+    #tableToExcel{
+        margin-top:2vh;
+    }
+    #deleteAllData{
+        float:right;
+        margin-top:2vh;
+    }
+</style>
+{% endblock css %}
+{% block info %}
+<div class="right-body">
+    <input type="button" id = "tableToExcel" value="表格导出">
+    <input type="button" id = "deleteAllData" value="删除全部动态数据" >
+    <div class="body1" id='divtable'>
+        <table id="equipmenttable"></table>
+    </div>
+    <div class="footer"></div>
+</div>
+{% endblock info %}
+{% block js %}
+<script src="/static/project-define/js/equipment.js"></script>
+{% endblock js %}

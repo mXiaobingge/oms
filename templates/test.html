@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/static/jquery/jquery-3.4.1.min.js"></script>
+    <script src="/static/pako.js"></script>
+</head>
+<body>
+    <div id='a'>
+        <button id='b'>123</button>
+    </div>
+</body>
+<script>
+    $(function(){
+        $('#b').click(function(){
+            alert(1)
+            $.ajax({
+                url:'test/data',
+                headers:{"Content-Encoding":"gzip"},
+                dataType:'json',
+                success:function(data){
+                    console.log(data.rows)
+                }
+            })
+        })
+    })
+    function unzip(str){          
+        // Convert binary string to character-number array  
+        var charData = str.split('').map(function(x){return x.charCodeAt(0);});
+      
+        // Turn number array into byte-array  
+        var binData = new Uint8Array(charData);
+      
+        // // unzip  
+        var data = pako.inflate(binData);     
+      
+        // Convert gunzipped byteArray back to ascii string:  
+        strData = String.fromCharCode.apply(null, new Uint16Array(data));
+        return $.parseJSON(strData);
+    }
+</script>
+</html>
