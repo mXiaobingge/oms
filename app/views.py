@@ -17,6 +17,7 @@ from datetime import datetime,timezone,timedelta
 import time
 # 数据如果是某些固定数值, 代表是某个错误, 通过把一个字典进下面参数, 
 # 把字典中的pa, pb等值的这些固定数值变成某个错误字符串,默认为"-"
+# test
 def str_err_code(d):
     err_code = {
         '-100.0':'-',# 'err_unconfig',
